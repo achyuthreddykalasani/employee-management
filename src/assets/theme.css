@@ -1,0 +1,284 @@
+/* ============================================
+   Employee Management System — Custom Theme
+   ============================================ */
+
+/* --- Bootstrap CSS Variable Overrides --- */
+:root {
+  /* Primary palette */
+  --bs-primary: #2F4F4F;
+  --bs-primary-rgb: 47, 79, 79;
+  --bs-primary-light: #487878;
+  --bs-primary-bg-subtle: #D7E7E7;
+  --bs-primary-text-emphasis: #1A2E2E;
+  --bs-primary-border-subtle: #AFCFCF;
+
+  /* Secondary */
+  --bs-secondary: #708090;
+  --bs-secondary-rgb: 112, 128, 144;
+  --bs-secondary-bg-subtle: #E7EAED;
+  --bs-secondary-text-emphasis: #4A5560;
+
+  /* Info */
+  --bs-info: #4682B4;
+  --bs-info-rgb: 70, 130, 180;
+
+  /* Body */
+  --bs-body-bg: #F5F7F8;
+  --bs-body-color: #3B3C36;
+  --bs-body-font-family: 'Inter', sans-serif;
+  --bs-body-font-size: 0.9375rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.6;
+
+  /* Headings */
+  --bs-heading-color: #2F4F4F;
+
+  /* Borders */
+  --bs-border-color: #E2E8F0;
+  --bs-border-radius: 0.5rem;
+  --bs-border-radius-sm: 0.375rem;
+  --bs-border-radius-lg: 0.75rem;
+
+  /* Links */
+  --bs-link-color: #2F4F4F;
+  --bs-link-hover-color: #1A2E2E;
+
+  /* Shadows */
+  --bs-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --bs-box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --bs-box-shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+
+  /* Custom tokens */
+  --ems-heading-font: 'Commissioner', sans-serif;
+  --ems-surface: #FFFFFF;
+  --ems-bg-subtle: #F0F4F5;
+  --ems-text-muted: #6C757D;
+  --ems-transition: 0.2s ease;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--ems-heading-font);
+  color: var(--bs-heading-color);
+}
+
+/* --- Card Overrides --- */
+.card {
+  --bs-card-bg: var(--ems-surface);
+  --bs-card-border-color: var(--bs-border-color);
+  --bs-card-border-width: 1px;
+  --bs-card-border-radius: var(--bs-border-radius-lg);
+  box-shadow: var(--bs-box-shadow-sm);
+  transition: box-shadow var(--ems-transition), transform var(--ems-transition);
+}
+
+.card:hover {
+  box-shadow: var(--bs-box-shadow);
+}
+
+/* --- Button Overrides --- */
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #1A2E2E;
+  --bs-btn-hover-border-color: #1A2E2E;
+  --bs-btn-active-bg: #162626;
+  --bs-btn-active-border-color: #162626;
+  --bs-btn-disabled-bg: #87B7B7;
+  --bs-btn-disabled-border-color: #87B7B7;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary);
+  --bs-btn-active-bg: #1A2E2E;
+  --bs-btn-active-border-color: #1A2E2E;
+  font-weight: 500;
+}
+
+.btn {
+  --bs-btn-border-radius: var(--bs-border-radius-sm);
+  transition: all var(--ems-transition);
+}
+
+/* --- Navbar Overrides --- */
+.navbar {
+  --bs-navbar-bg: var(--ems-surface);
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+/* --- Form Overrides --- */
+.form-control,
+.form-select {
+  border-color: var(--bs-border-color);
+  transition: border-color var(--ems-transition), box-shadow var(--ems-transition);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--bs-primary-light);
+  box-shadow: 0 0 0 0.2rem rgba(47, 79, 79, 0.15);
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--bs-heading-color);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+
+/* --- Table Overrides --- */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-hover-bg: var(--ems-bg-subtle);
+  font-size: 0.875rem;
+}
+
+.table > thead {
+  border-bottom: 2px solid var(--bs-border-color);
+}
+
+.table > thead th {
+  font-family: var(--ems-heading-font);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ems-text-muted);
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  border-bottom: none;
+}
+
+.table > tbody > tr {
+  transition: background-color var(--ems-transition);
+}
+
+.table > tbody td {
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  vertical-align: middle;
+}
+
+/* --- Alert Overrides --- */
+.alert {
+  --bs-alert-border: 1px solid transparent;
+  --bs-alert-border-radius: var(--bs-border-radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* --- Badge Overrides --- */
+.badge {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-size: 0.75rem;
+}
+
+/* --- Reusable Utility Classes --- */
+.ems-section-title {
+  font-family: var(--ems-heading-font);
+  font-weight: 600;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ems-text-muted);
+}
+
+.ems-stat-value {
+  font-family: var(--ems-heading-font);
+  font-weight: 700;
+  color: var(--bs-heading-color);
+}
+
+.ems-stat-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ems-text-muted);
+}
+
+.ems-stat-card {
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius-lg);
+  background: var(--ems-surface);
+  padding: 1.25rem;
+  transition: all var(--ems-transition);
+}
+
+.ems-stat-card:hover {
+  box-shadow: var(--bs-box-shadow);
+  transform: translateY(-1px);
+}
+
+.ems-icon-box {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--bs-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ems-page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.ems-action-btn {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--bs-border-radius-sm);
+  border: 1px solid var(--bs-border-color);
+  background: var(--ems-surface);
+  color: var(--ems-text-muted);
+  transition: all var(--ems-transition);
+  cursor: pointer;
+}
+
+.ems-action-btn:hover {
+  background: var(--ems-bg-subtle);
+}
+
+.ems-action-btn-edit:hover {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary-border-subtle);
+  background: var(--bs-primary-bg-subtle);
+}
+
+.ems-action-btn-delete:hover {
+  color: var(--bs-danger);
+  border-color: #f5c2c7;
+  background: #fff5f5;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ems-bg-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E0;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bs-secondary);
+}
